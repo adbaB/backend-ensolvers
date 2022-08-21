@@ -1,6 +1,5 @@
 import { IsString, IsBoolean, IsArray, IsNotEmpty } from 'class-validator';
-import { PartialType } from '@nestjs/mapped-types';
-import { Categories } from 'src/entities/categories.entity';
+import { PartialType } from '@nestjs/swagger';
 
 export class CreateNotesDto {
   @IsString()
@@ -15,7 +14,7 @@ export class CreateNotesDto {
   readonly archived: boolean;
 
   @IsArray()
-  readonly tags: Categories[];
+  readonly categoriesIds: number[];
 }
 
 export class UpdateNoteDto extends PartialType(CreateNotesDto) {}
