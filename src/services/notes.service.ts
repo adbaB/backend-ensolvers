@@ -25,7 +25,6 @@ export class NotesService {
         archived,
       },
     });
-    console.log(notes);
     if (notes.length === 0) {
       throw new NotFoundException('Notes not found');
     }

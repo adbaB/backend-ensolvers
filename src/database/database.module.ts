@@ -20,6 +20,9 @@ import config from 'src/config';
           username,
           password,
           database: nameDatabase,
+          ssl: {
+            rejectUnauthorized: false,
+          },
           synchronize: false,
           autoLoadEntities: false,
         };
