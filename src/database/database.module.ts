@@ -20,8 +20,8 @@ import config from 'src/config';
           username,
           password,
           database: nameDatabase,
-          synchronize: true,
-          autoLoadEntities: true,
+          synchronize: false,
+          autoLoadEntities: false,
         };
       },
     }),
