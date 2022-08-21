@@ -3,6 +3,8 @@ import { ConfigType } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import config from 'src/config';
+import { Category } from 'src/entities/category.entity';
+import { Notes } from 'src/entities/notes.entity';
 
 @Global()
 @Module({
@@ -24,8 +26,7 @@ import config from 'src/config';
           ssl: {
             rejectUnauthorized: false,
           },
-          synchronize: false,
-          autoLoadEntities: false,
+          entities: [Notes, Category],
         };
       },
     }),
