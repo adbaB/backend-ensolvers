@@ -1,4 +1,12 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+} from '@nestjs/common';
 import { createCategoriesDto } from '../dtos/categories.dto';
 import { CategoriesService } from '../services/categories.service';
 import { ApiTags } from '@nestjs/swagger';
@@ -11,6 +19,11 @@ export class CategoriesController {
   async FindAll() {
     const categories = await this.categoriesService.Find();
     return { categories };
+  }
+  @Get(':id')
+  FindOne(@Param('id', ParseIntPipe) id: number) {
+    const category = this.categoriesService.FindOne(id);
+    return category;
   }
   @Post()
   async Create(@Body() data: createCategoriesDto) {

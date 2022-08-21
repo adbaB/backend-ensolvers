@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
 
@@ -25,9 +25,7 @@ export class NotesService {
         archived,
       },
     });
-    if (notes.length === 0) {
-      throw new NotFoundException('Notes not found');
-    }
+
     return notes;
   }
 
