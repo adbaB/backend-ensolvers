@@ -14,8 +14,8 @@ import config from 'src/config';
           configService.database;
 
         return {
-          type: 'postgres',
           url,
+          type: 'postgres',
           host,
           port,
           username,
