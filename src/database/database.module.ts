@@ -10,11 +10,12 @@ import config from 'src/config';
     TypeOrmModule.forRootAsync({
       inject: [config.KEY],
       useFactory: (configService: ConfigType<typeof config>) => {
-        const { host, nameDatabase, username, password, port } =
+        const { host, nameDatabase, username, password, port, url } =
           configService.database;
 
         return {
           type: 'postgres',
+          url,
           host,
           port,
           username,

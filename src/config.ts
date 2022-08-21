@@ -8,6 +8,7 @@ export default registerAs('config', () => {
       username: process.env.USERNAME_DB,
       password: process.env.PASSWORD,
       nameDatabase: process.env.DATABASE_NAME,
+      url: process.env.DATABASE_URL,
     },
   };
 });
