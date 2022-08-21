@@ -9,8 +9,8 @@ import { Category } from './category.entity';
 
 @Entity()
 export class Notes {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ type: 'varchar', length: 255 })
   title: string;

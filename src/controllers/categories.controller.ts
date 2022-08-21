@@ -1,12 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  ParseIntPipe,
-  Post,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { createCategoriesDto } from '../dtos/categories.dto';
 import { CategoriesService } from '../services/categories.service';
 import { ApiTags } from '@nestjs/swagger';
@@ -21,7 +13,7 @@ export class CategoriesController {
     return { categories };
   }
   @Get(':id')
-  FindOne(@Param('id', ParseIntPipe) id: number) {
+  FindOne(@Param('id') id: string) {
     const category = this.categoriesService.FindOne(id);
     return category;
   }

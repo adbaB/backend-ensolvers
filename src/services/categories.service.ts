@@ -13,7 +13,7 @@ export class CategoriesService {
     return this.categoriesRepo.find();
   }
 
-  async FindOne(id: number) {
+  async FindOne(id: string) {
     const category = await this.categoriesRepo.findOne({
       where: {
         id,

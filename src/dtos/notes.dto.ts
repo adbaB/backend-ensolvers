@@ -1,7 +1,16 @@
-import { IsString, IsBoolean, IsArray, IsNotEmpty } from 'class-validator';
+import {
+  IsString,
+  IsBoolean,
+  IsArray,
+  IsNotEmpty,
+  IsUUID,
+} from 'class-validator';
 import { PartialType } from '@nestjs/swagger';
 
 export class CreateNotesDto {
+  @IsString()
+  @IsUUID()
+  readonly id?: string;
   @IsString()
   @IsNotEmpty()
   readonly title: string;
@@ -14,7 +23,7 @@ export class CreateNotesDto {
   readonly archived: boolean;
 
   @IsArray()
-  readonly categoriesIds: number[];
+  readonly categoriesIds: string[];
 }
 
 export class UpdateNoteDto extends PartialType(CreateNotesDto) {}

@@ -13,7 +13,7 @@ export class NotesService {
     @InjectRepository(Category) private categoriesRepo: Repository<Category>,
   ) {}
 
-  async Find(id: number, archived: boolean) {
+  async Find(id: string, archived: boolean) {
     const notes = await this.notesRepo.find({
       relations: {
         categories: true,
@@ -40,7 +40,7 @@ export class NotesService {
     return this.notesRepo.save(newNote);
   }
 
-  async Update(id: number, changes: UpdateNoteDto) {
+  async Update(id: string, changes: UpdateNoteDto) {
     const note = await this.notesRepo.findOneBy({ id });
     if (changes.categoriesIds) {
       const categories = await this.categoriesRepo.findBy({

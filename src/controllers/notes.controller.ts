@@ -20,7 +20,7 @@ export class NotesController {
   constructor(private readonly notesService: NotesService) {}
   @Get()
   async Find(
-    @Query('categoryId') categoryId: number,
+    @Query('categoryId') categoryId: string,
     @Query('archived') archived = false,
   ) {
     const notes = await this.notesService.Find(categoryId, archived);
@@ -38,10 +38,7 @@ export class NotesController {
     };
   }
   @Put(':id')
-  async Update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() changes: UpdateNoteDto,
-  ) {
+  async Update(@Param('id') id: string, @Body() changes: UpdateNoteDto) {
     const updatedNote = await this.notesService.Update(id, changes);
     return {
       updatedNote,
