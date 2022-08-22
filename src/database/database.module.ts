@@ -26,9 +26,7 @@ import { Notes } from 'src/entities/notes.entity';
           ssl: {
             rejectUnauthorized: false,
           },
-          //   entities: [Notes, Category],
-          synchronize: true,
-          autoLoadEntities: true,
+          entities: [Notes, Category],
         };
       },
     }),
