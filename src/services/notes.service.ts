@@ -52,7 +52,7 @@ export class NotesService {
     return this.notesRepo.save(note);
   }
 
-  Delete(id: number) {
+  Delete(id: string) {
     return this.notesRepo.delete(id);
   }
 }

@@ -28,7 +28,7 @@ export class CategoriesService {
     const newCategory = this.categoriesRepo.create(data);
     return this.categoriesRepo.save(newCategory);
   }
-  Delete(id: number) {
+  Delete(id: string) {
     return this.categoriesRepo.delete(id);
   }
 }
