@@ -40,12 +40,12 @@ PORT =
 
 ## DEPLOY VIA HEROKU
 
-https://ensolvers-postgres-adba.herokuapp.com/
+https://murmuring-anchorage-35241.herokuapp.com/
 ```
 
 ## Documentation
 
-https://ensolvers-postgres-adba.herokuapp.com/docs
+https://murmuring-anchorage-35241.herokuapp.com/docs
 
 ## APP Frontend
 
