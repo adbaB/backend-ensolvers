@@ -23,7 +23,7 @@ export class CategoriesController {
     return { newCategory };
   }
   @Delete()
-  Delete(@Param() id: number) {
+  Delete(@Param('id') id: string) {
     const category = this.categoriesService.Delete(id);
     return { category };
   }

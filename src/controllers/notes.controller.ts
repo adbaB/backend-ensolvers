@@ -46,7 +46,7 @@ export class NotesController {
   }
 
   @Delete(':id')
-  async Delete(@Param('id', ParseIntPipe) id: number) {
+  async Delete(@Param('id') id: string) {
     const deletedNote = await this.notesService.Delete(id);
     return {
       deletedNote,
